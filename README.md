@@ -1,5 +1,6 @@
-h1 align="center">
-    Termux Manager Setup<br>
+<h1 align="center">
+    <b>Termux Manager Setup</b>
+    <br>
 	<br>
     <img src="https://raw.githubusercontent.com/oxygenfox/termux-setup/master/assets/Head1.png">
 	<br>
@@ -14,21 +15,22 @@ Tools Function:
 - Many more for lazy human like me 😂
 
 ## How to use:
-*Need Git pkg*
+**Need Git pkg**
 ```
 pkg install git
 ```
-*Clone Repositories*
+**Clone Repositories**
 
 ```
 git clone https://github.com/oxygenfox/termux-setup.git
 ```
-*Move to directory*
+**Move to directory**
 
 ```
 cd /termux-setup
 ```
-*Execute tools*
+
+**Execute tools**
 
 ```
 chmod +x tech.sh
@@ -36,7 +38,7 @@ chmod +x tech.sh
 ```
 ./tech.sh
 ```
-or
+**or**
 ```
 sh tech.sh
 ```
