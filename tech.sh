@@ -15,6 +15,18 @@
 
 clear
 ver=V1.0_RC
+vendor=$( getprop ro.product.brand)
+model=$( getprop ro.product.model)
+rom=$( getprop ro.build.display.id)
+androidos=$( getprop ro.build.version.release)
+id=$(id); id=${id#*=}; id=${id%%[\( ]*}
+
+# Rooted
+if [ "$id" = "0" ] || [ "$id" = "root" ]; then
+rootin="\e[1;32mRooted\e[0m"
+else
+rootin="\e[1;31mNo Rooted\e[0m"
+fi;
 
 # COMPOSER
 if [ -e /data/data/com.termux/files/usr/bin/composer ]; then
@@ -61,6 +73,7 @@ fi;
 #MENU
 busybox echo -e "\e[1;31m.../////// CHECKING SYSTEM...\e[0m"
 sleep 0.5
+busybox echo ""
 busybox echo -e "\e[1;31m.../////// CHECKING STORAGE...\e[0m"
 sleep 0.5
 busybox echo ""
@@ -76,14 +89,22 @@ busybox echo -e "\e[01;36m                      MAKE LIFE EASY
 \e[00;37;40m"
 busybox sleep 1
 busybox echo ""
-busybox echo "PKG INSTALLED"
+busybox echo -e "\033[1mDEVICE INFORMATION\033[0m"
+busybox echo -e "\e[01;36m ----------------------------------------\e[00;37;40m"
+busybox echo "Vendor: $vendor"
+busybox echo "Model: $model"
+busybox echo "ROM: $rom"
+busybox echo "Android Version: $androidos"
+busybox echo -e "Root Info: $rootin"
+busybox echo ""
+busybox echo -e "\033[1mPKG INSTALLED\033[0m"
 busybox echo -e "\e[01;36m ----------------------------------------\e[00;37;40m"
 busybox echo -e "1 - PHP | $phpin"
 busybox echo -e "2 - PYTHON | $pythonin"
 busybox echo -e "3 - NODE JS | $nodein"
 busybox echo -e "4 - COMPOSER | $cmpos"
 busybox echo ""
-busybox echo "EXTRA SETUP"
+busybox echo -e "\033[1mEXTRA SETUP\033[0m"
 busybox echo -e "\e[01;36m ----------------------------------------\e[00;37;40m"
 busybox echo -e "5 - STORAGE PERMISION | $storagein"
 busybox echo -e "6 - TERMUX EXTRA KEY | $extrakeyin"
