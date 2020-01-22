@@ -2,7 +2,7 @@
     <b>Termux Manager Setup</b>
     <br>
 	<br>
-    <img src="https://raw.githubusercontent.com/oxygenfox/termux-setup/master/assets/Head1.png">
+    <img src="https://raw.githubusercontent.com/oxygenfox/assets/master/png/termuxtools/Head1.png">
 	<br>
 </h1>
 
