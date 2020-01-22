@@ -134,7 +134,7 @@ if [ $option -ne 1 ]; then
 busybox echo ""
 busybox echo "Back To Menu..."
 busybox sleep 1
-sh TE.sh
+sh tech.sh
 else
 busybox echo ""
 pkg uninstall php
@@ -156,7 +156,7 @@ busybox sleep 1
 exit
 else
 busybox echo ""
-sh TE.sh
+sh tech.sh
 busybox sleep 1
 fi
 fi
@@ -180,7 +180,7 @@ if [ $option -ne 1 ]; then
 busybox echo ""
 busybox echo "Back To Menu..."
 busybox sleep 1
-sh TE.sh
+sh tech.sh
 else
 busybox echo ""
 pkg uninstall python
@@ -202,7 +202,7 @@ busybox sleep 1
 exit
 else
 busybox echo ""
-sh TE.sh
+sh tech.sh
 busybox sleep 1
 fi
 fi
@@ -226,7 +226,7 @@ if [ $option -ne 1 ]; then
 busybox echo ""
 busybox echo "Back To Menu..."
 busybox sleep 1
-sh TE.sh
+sh tech.sh
 else
 busybox echo ""
 pkg uninstall nodejs
@@ -248,7 +248,7 @@ busybox sleep 1
 exit
 else
 busybox echo ""
-sh TE.sh
+sh tech.sh
 busybox sleep 1
 fi
 fi
@@ -272,7 +272,7 @@ if [ $option -ne 1 ]; then
 busybox echo ""
 busybox echo "Back To Menu..."
 busybox sleep 1
-sh TE.sh
+sh tech.sh
 else
 busybox echo ""
 rm -rf /data/data/com.termux/files/usr/bin/composer
@@ -295,7 +295,7 @@ busybox sleep 1
 exit
 else
 busybox echo ""
-sh TE.sh
+sh tech.sh
 busybox sleep 1
 fi
 fi
@@ -319,24 +319,62 @@ busybox sleep 1
 exit
 else
 busybox echo ""
-sh TE.sh
+sh tech.sh
 busybox sleep 1
 fi
 busybox clear ;;
 
 6) busybox clear;
+termux-reload-settings
 busybox echo "Make Extra Key On Termux"
-busybox echo "No Need Internet Connection"
 busybox echo ""
+busybox sleep 1
+busybox echo -n "Select Key
+[ Full = 1 | Simple = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+if [ -e /data/data/com.termux/files/home/.termux/termux.properties ]; then
+busybox echo "Make Simple Extra Key On Termux"
+busybox echo "No Need Internet Connection"
+busybox sleep 1
+busybox echo "No Need Make Directory"
+busybox sleep 1
+else
+busybox echo "Make Simple Extra Key On Termux"
+busybox echo "No Need Internet Connection"
 busybox sleep 1
 busybox echo "Make Directory"
 busybox sleep 1
-mkdir -p ~/.termux
-busybox echo "Copy Setup to Directory"
+mkdir -p ~/.termux/termux.properties
+fi
+cat termux.properties >> ~/.termux/termux.properties
+echo "extra-keys = [['CTRL','LEFT','UP','DOWN','RIGHT','/','-','_']]" > termux.properties
 busybox sleep 1
-cp extrakey/termux.properties ~/.termux/
 busybox echo ""
-busybox echo "Done"
+busybox echo "Done !! If not auto change maybe you need restart termux or apply again"
+termux-reload-settings
+else
+if [ -e /data/data/com.termux/files/home/.termux/termux.properties ]; then
+busybox echo "Make Full Extra Key On Termux"
+busybox echo "No Need Internet Connection"
+busybox sleep 1
+busybox echo "No Need Make Directory"
+busybox sleep 1
+else
+busybox echo "Make Full Extra Key On Termux"
+busybox echo "No Need Internet Connection"
+busybox sleep 1
+busybox echo "Make Directory"
+busybox sleep 1
+mkdir -p ~/.termux/termux.properties
+fi
+cat termux.properties >> ~/.termux/termux.properties
+busybox sleep 1
+echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" > termux.properties
+busybox echo ""
+busybox echo "Done !! If not auto change maybe you need restart termux or apply again"
+termux-reload-settings
+fi
 busybox echo -n ">>>...Come back to menu...?
 [ Yes = 1 | No = 2 ]: "
 read option
@@ -347,7 +385,7 @@ busybox sleep 1
 exit
 else
 busybox echo ""
-sh TE.sh
+sh tech.sh
 busybox sleep 1
 fi
 busybox clear ;;
