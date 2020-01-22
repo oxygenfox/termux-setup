@@ -1,7 +1,7 @@
 h1 align="center">
     Termux Manager Setup<br>
 	<br>
-    <img src="https://raw.githubusercontent.com/oxygenfox/termux-setup/master/assets/head1.png">
+    <img src="https://raw.githubusercontent.com/oxygenfox/termux-setup/master/assets/Head1.png">
 	<br>
 </h1>
 
