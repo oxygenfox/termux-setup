@@ -218,7 +218,7 @@ busybox echo ""
 busybox sleep 1
 if [ -e /data/data/com.termux/files/usr/bin/node ]; then
 busybox echo -e "\e[1;32mNODE JS Already Installed !!\e[0m"
-busybox sleep 1
+busybox sleep 1 
 busybox echo -n "Want To Uninstall...?
 [ Yes = 1 | No = 2 ]: "
 read option
